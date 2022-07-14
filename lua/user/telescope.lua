@@ -1,5 +1,8 @@
 local actions = require("telescope.actions")
 
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>st', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+
 require("telescope").setup({
     defaults = {
         file_sorter = require("telescope.sorters").get_fzy_sorter,

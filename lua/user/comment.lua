@@ -1,9 +1,1 @@
-require('Comment').setup({
-	    toggler = {
-        ---Line-comment toggle keymap
-        line = 'gcc',
-        ---Block-comment toggle keymap
-        block = 'gbc',
-    },
-
-})
+require('Comment').setup({ create_mappings = false })

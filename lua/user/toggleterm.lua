@@ -10,7 +10,7 @@ function _G.set_terminal_keymaps()
   local opts = {noremap = true}
   local set_buf_key = vim.api.nvim_buf_set_keymap
 
-  set_buf_key(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  -- set_buf_key(0, 't', '<esc>', [[<C-\><C-n>]], opts)
   set_buf_key(0, 't', 'jk', [[<C-\><C-n>]], opts)
   set_buf_key(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
   set_buf_key(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)

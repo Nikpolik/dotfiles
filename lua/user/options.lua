@@ -25,3 +25,5 @@ api.nvim_set_keymap('n', '<leader>h', ':noh<CR>', { noremap = true, silent = tru
 
 -- Enable mouse support
 vim.cmd [[set mouse=a]]
+-- Reserve space for errors/icons collumn
+vim.cmd [[set signcolumn=yes]]

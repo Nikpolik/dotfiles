@@ -1,5 +1,3 @@
-vim.g.t_Co=256   -- This is may or may not needed.
-
 vim.opt.termguicolors = true
 vim.opt.number = true
 
@@ -7,19 +5,14 @@ vim.opt.number = true
 vim.g.sonokai_style = 'andromeda'
 vim.g.sonokai_transparent_background = true
 vim.g.sonokai_enable_italic = true
--- vim.cmd [[ colorscheme sonokai ]]
-local nightfox = require("nightfox")
-nightfox.setup({
-  options = {
-    transparent = false
-  }
-})
--- vim.cmd [[ colorscheme nightfox ]]
 
 require("catppuccin").setup({
-  flavour = "frappe",
+      flavour = "latte", -- latte, frappe, macchiato, mocha
+      background = { -- :h background
+        light = "latte",
+      },
 })
-vim.cmd [[ colorscheme catppuccin-frappe ]]
+vim.cmd [[ colorscheme catppuccin-latte ]]
 
 -- local dracula = require("dracula")
 -- dracula.setup({

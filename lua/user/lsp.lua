@@ -1,7 +1,7 @@
 local nvim_lsp = require('lspconfig')
-local saga = require('lspsaga')
+-- local saga = require('lspsaga')
 
-saga.setup({})
+-- saga.setup({})
 
 -- Autoformat command
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
@@ -37,8 +37,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>gf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
-  buf_set_keymap("n", "<leader>gr", "<cmd>Lspsaga rename<CR>", opts)
-  buf_set_keymap("n", "<leader>ga", "<cmd>Lspsaga code_action<CR>", opts)
+  -- buf_set_keymap("n", "<leader>gr", "<cmd>Lspsaga rename<CR>", opts)
+  -- buf_set_keymap("n", "<leader>ga", "<cmd>Lspsaga code_action<CR>", opts)
 
   if client.name == 'tsserver' then
     client.server_capabilities.documentFormattingProvider = false
@@ -48,22 +48,17 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver'  }
+local servers = { 'rust_analyzer', 'tsserver', 'pyright', 'gopls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
-    }
+    },
   }
 end
 
-nvim_lsp.pyright.setup({
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-})
+
 
 local null_ls = require("null-ls")
 
@@ -71,7 +66,8 @@ null_ls.setup({
     sources = {
       null_ls.builtins.formatting.prettierd,
       null_ls.builtins.code_actions.eslint_d,
-      null_ls.builtins.formatting.black
+      null_ls.builtins.formatting.black,
+      null_ls.builtins.diagnostics.revive
     },
 })
 

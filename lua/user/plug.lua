@@ -48,6 +48,12 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
      },
   }
+
+  use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+  }
     -- Lua
   use {
     "folke/trouble.nvim",
@@ -62,6 +68,12 @@ return require('packer').startup(function(use)
        run = ':TSUpdate'
    }
 
+   use {
+     'nvim-treesitter/nvim-treesitter-context',
+   }
+
+
+
   use 'edkolev/tmuxline.vim'
 
   -- autocomplete
@@ -73,10 +85,7 @@ return require('packer').startup(function(use)
   use { 'hrsh7th/cmp-buffer' }
   use { 'hrsh7th/cmp-nvim-lua' }
   use { 'neovim/nvim-lspconfig' }
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-  })
+  use({ "glepnir/lspsaga.nvim" })
 
   use {
     'numToStr/Comment.nvim',
@@ -106,8 +115,16 @@ return require('packer').startup(function(use)
     end
   }
 
+  use "FabijanZulj/blame.nvim"
+
+  use "almo7aya/openingh.nvim"
+
+
   -- Get project specific settings like tabs
   use 'editorconfig/editorconfig-vim'
+
+  -- Diff
+  use "sindrets/diffview.nvim" 
 
   -- Persists undo and recover
   use 'chrisbra/Recover.vim'
@@ -118,21 +135,22 @@ return require('packer').startup(function(use)
   use 'LukasPietzschmann/telescope-tabs'
   use 'lewis6991/gitsigns.nvim'
 
-  -- Status line
   use 'itchyny/lightline.vim'
 
   use 'github/copilot.vim'
   -- Packer
   use({
     "jackMort/ChatGPT.nvim",
-        config = function()
-        end,
-        requires = {
-          "MunifTanjim/nui.nvim",
-          "nvim-lua/plenary.nvim",
-          "nvim-telescope/telescope.nvim"
-        }
-    })
-  end)
+    config = function()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
+
+  use 'junegunn/fzf'
+end)
 
 

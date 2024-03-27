@@ -11,7 +11,7 @@ set_key('<leader>st', ':Telescope live_grep<CR>')
 set_key('<leader>sr', ':Telescope lsp_references<CR>')
 set_key("<Leader>fr", ":Telescope oldfiles only_cwd=true<CR>")
 set_key('<leader>ff', ':Telescope find_files<CR>')
-set_key('<leader>ft', ":lua require('telescope.builtin').grep_string({search = 'TODO'})<CR>")
+set_key('<leader>fd', ":lua require('telescope.builtin').grep_string({search = 'TODO(nikpolik):'})<CR>")
 set_key("<leader>sg", "<cmd>Telescope resume<cr>")
 set_key("<leader>ft", ":Telescope telescope-tabs list_tabs<CR>")
 

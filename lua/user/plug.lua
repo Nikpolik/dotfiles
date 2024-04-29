@@ -13,14 +13,14 @@ return require('packer').startup(function(use)
 
 
   --  Color Schemes
-  use "EdenEast/nightfox.nvim"
+  -- use "EdenEast/nightfox.nvim"
   -- use { 'ayu-theme/ayu-vim' }
   -- use { 'NLKNguyen/papercolor-theme' }
   -- use { 'kaicataldo/material.vim' }
-  use {
-    'catppuccin/nvim',
-    as = 'catppuccin'
-  }
+  -- use {
+  --   'catppuccin/nvim',
+  --   as = 'catppuccin'
+  -- }
   -- use 'folke/tokyonight.nvim'
   -- use 'challenger-deep-theme/vim' 
   -- use 'Mofiqul/dracula.nvim'
@@ -30,10 +30,12 @@ return require('packer').startup(function(use)
   -- use 'ackyshake/Spacegray.vim'
   -- use 'Yazeed1s/oh-lucy.nvim'
   -- use 'shaunsingh/nord.nvim'
-  --
-  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
-  use 'Rigellute/shades-of-purple.vim'
-  use 'sainnhe/sonokai'
+  -- use { "bluz71/vim-nightfly-colors", as = "nightfly" }
+  -- use 'Rigellute/shades-of-purple.vim'
+  -- use 'sainnhe/sonokai'
+ use { "rose-pine/neovim", name = "rose-pine" }
+
+
   use { 'nvim-lua/popup.nvim' }
   use { 'nvim-lua/plenary.nvim' }
   use {

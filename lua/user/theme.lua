@@ -6,13 +6,21 @@ vim.g.sonokai_style = 'andromeda'
 vim.g.sonokai_transparent_background = true
 vim.g.sonokai_enable_italic = true
 
-require("catppuccin").setup({
-      flavour = "latte", -- latte, frappe, macchiato, mocha
-      background = { -- :h background
-        light = "latte",
-      },
+require("rose-pine").setup({
+  variant = "main",
+  styles = {
+    transparency = true,
+  }
 })
-vim.cmd [[ colorscheme catppuccin-latte ]]
+
+vim.cmd("colorscheme rose-pine")
+-- require("catppuccin").setup({
+--       flavour = "latte", -- latte, frappe, macchiato, mocha
+--       background = { -- :h background
+--         light = "latte",
+--       },
+-- })
+-- vim.cmd [[ colorscheme catppuccin-latte ]]
 
 -- local dracula = require("dracula")
 -- dracula.setup({

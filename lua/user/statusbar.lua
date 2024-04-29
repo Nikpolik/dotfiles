@@ -1,8 +1,14 @@
 vim.opt.termguicolors = true
 
+
 vim.cmd [[
-  let g:lightline = {'colorscheme': 'catppuccin'}
+  let g:lightline = {'colorscheme': 'rosepine'}
 ]]
+
+--
+-- vim.cmd [[
+--   let g:lightline = {'colorscheme': 'catppuccin'}
+-- ]]
 
 vim.cmd [[
     let g:tmuxline_theme = 'lightline'

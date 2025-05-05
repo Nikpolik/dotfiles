@@ -47,8 +47,20 @@ brew install tree
 
 brew install luarocks
 
+brew tap FelixKratz/formulae
+brew install sketchybar
+
+brew install font-hack-nerd-font
+
+brew install --cask sf-symbols
+
+brew install jq
+
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# Install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

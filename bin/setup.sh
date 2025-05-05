@@ -67,7 +67,6 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-
 # catppuccin theme for tmux
 mkdir -p ~/.config/tmux/plugins/catppuccin
 git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux

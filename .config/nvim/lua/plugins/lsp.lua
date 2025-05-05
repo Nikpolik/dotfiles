@@ -7,11 +7,12 @@ return {
       },
     }
   },
+  "williamboman/mason-lspconfig.nvim",
   {
-    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "stylua", "eslint_d", "prettierd", "rust_analyzer" }
-    },
+      ensure_installed = { "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell" }
+    }
   },
   {
     'stevearc/conform.nvim',

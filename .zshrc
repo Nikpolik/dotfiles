@@ -128,3 +128,14 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+
+# Auto-start tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  # Create or attach to session named 'main'
+  if tmux has-session -t main 2>/dev/null; then
+    exec tmux attach-session -t main
+  else
+    exec tmux new-session -s main
+  fi
+fi

@@ -56,6 +56,8 @@ brew install --cask sf-symbols
 
 brew install jq
 
+brew install fzf
+
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
@@ -64,3 +66,12 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+
+# catppuccin theme for tmux
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+
+# install tmux tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+

@@ -17,6 +17,18 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = false
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'signal'
+run = 'move-node-to-workspace E'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'obsidian'
+run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'todoist'
+run = 'move-node-to-workspace E' 
+
 [key-mapping]
 preset = 'qwerty'
 
@@ -25,8 +37,8 @@ inner.horizontal = 20
 inner.vertical =   20
 outer.left =       20
 outer.bottom =     20
-outer.top =        50
-outer.right =      80
+outer.top =        60
+outer.right =      20
 
 [exec.env-vars]
 PATH = '/usr/local/bin/:${PATH}'
@@ -57,6 +69,8 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+alt-e = 'workspace E'
+alt-o = 'workspace O'
 
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
@@ -67,10 +81,15 @@ alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
 alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
 alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
 alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+alt-shift-e = 'move-node-to-workspace E --focus-follows-window'
 
 alt-tab = 'workspace-back-and-forth'
 
 alt-shift-semicolon = 'mode service'
+
+alt-shift-s = 'exec-and-forget open -n /Applications/Signal.app/'
+alt-shift-o = 'exec-and-forget open -n /Applications/Obsidian.app/'
+alt-shift-t = 'exec-and-forget open -n /Applications/Todoist.app/'
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
@@ -89,3 +108,17 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = ['secondary', 'main']
+7 = ['secondary', 'main']
+8 = ['secondary', 'main']
+9 = ['secondary', 'main']
+E = ['secondary', 'main']
+T = ['secondary', 'main']
+O = ['secondary', 'main']

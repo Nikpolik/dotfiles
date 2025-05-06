@@ -3,6 +3,8 @@
 # make sure it's executable with:
 # chmod +x ~/.config/sketchybar/plugins/aerospace.sh
 
+echo $FOCUSED_WORKSPACE $1 $NAME >> /usr/local/var/log/sketchybar/sketchybar.err.log
+
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
   sketchybar --set $NAME background.color=0x88FF00FF label.shadow.drawing=on icon.shadow.drawing=on background.border_width=2
 else

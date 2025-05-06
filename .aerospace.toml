@@ -36,8 +36,8 @@ preset = 'qwerty'
 inner.horizontal = 20
 inner.vertical =   20
 outer.left =       20
-outer.bottom =     20
-outer.top =        60
+outer.bottom =     10
+outer.top =        50
 outer.right =      20
 
 [exec.env-vars]

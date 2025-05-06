@@ -10,7 +10,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=40 blur_radius=20 color=0x30202020
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -96,7 +96,7 @@ done
 
 sketchybar --add item space_separator left \
   --set space_separator icon="😊" \
-  --set one associated_display=2 \
+  --set space_separator associated_display=1 \
   icon.padding_left=4 \
   label.drawing=off \
   background.drawing=off \
@@ -126,7 +126,7 @@ sketchybar --add item clock right \
   --set clock associated_display=1 \
   --add item volume right \
   --set volume script="$PLUGIN_DIR/volume.sh" \
-  --set clock associated_display=1 \
+  --set volume associated_display=1 \
   --subscribe volume volume_change \
   --add item battery right \
   --set battery associated_display=1 \

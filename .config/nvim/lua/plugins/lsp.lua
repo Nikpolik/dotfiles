@@ -11,7 +11,7 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell" }
+      ensure_installed = { "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell", "gopls" }
     }
   },
   {
@@ -44,6 +44,7 @@ return {
 
       lspconfig.lua_ls.setup { capabilities = capabilities }
       lspconfig.rust_analyzer.setup { capabilities = capabilities }
+      lspconfig.gopls.setup { capabilities = capabilities }
     end,
   }
 }

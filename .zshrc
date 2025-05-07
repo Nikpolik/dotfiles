@@ -132,10 +132,18 @@ esac
 
 # Auto-start tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  # Create or attach to session named 'main'
+  # Check if main session exists
   if tmux has-session -t main 2>/dev/null; then
-    exec tmux attach-session -t main
+    # Check if any other clients are attached to main session
+    if [ "$(tmux list-clients -t main 2>/dev/null | wc -l)" -eq 0 ]; then
+      # No clients attached, so attach to main
+      exec tmux attach-session -t main
+    else
+      # Clients attached, create a new linked session
+      exec tmux new-session -s "main-$RANDOM" -t main -d \; set-option destroy-unattached on \; attach
+    fi
   else
+    # Main session doesn't exist, create it
     exec tmux new-session -s main
   fi
 fi

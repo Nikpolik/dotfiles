@@ -29,6 +29,10 @@ run = 'move-node-to-workspace O'
 if.app-name-regex-substring = 'todoist'
 run = 'move-node-to-workspace E' 
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'spotify'
+run = 'move-node-to-workspace M'
+
 [key-mapping]
 preset = 'qwerty'
 
@@ -71,6 +75,7 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-e = 'workspace E'
 alt-o = 'workspace O'
+alt-m = 'workspace M'
 
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
@@ -122,3 +127,4 @@ shift-down = ['volume set 0', 'mode main']
 E = ['secondary', 'main']
 T = ['secondary', 'main']
 O = ['secondary', 'main']
+M = ['secondary', 'main']

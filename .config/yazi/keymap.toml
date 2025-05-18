@@ -1,0 +1,14 @@
+[[manager.prepend_keymap]]
+on   = "<C-o>"
+run  = "shell 'tmux-open-in-tmux.sh \"$0\"'"
+desc = "Open (or attach) tmux session for hovered folder"
+
+[[manager.prepend_keymap]]
+on   = "o"
+run  = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on   = "<Enter>"
+run  = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"

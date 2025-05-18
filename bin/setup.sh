@@ -40,6 +40,9 @@ brew install nvim
 # Terminal file manager
 brew install yazi
 
+# Install smart-enter yazi extension
+ya pack -a yazi-rs/plugins:smart-enter
+
 # tig is a better git log viewer
 brew install tig
 

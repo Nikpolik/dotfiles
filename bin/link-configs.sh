@@ -11,6 +11,6 @@ ln -sf "$CURRENT_DIR/.config/nvim" ~/.config/
 ln -sf "$CURRENT_DIR/.config/sketchybar" ~/.config/
 
 # TMUX helper scripts
-ln -sf "$CURRENT_DIR/bin/tmux-yazi-floating-selector.sh"  /usr/local/bin/tmux-yazi-floating-selector.sh
-ln -sf "$CURRENT_DIR/bin/tmux-session-switcher.sh"  /usr/local/bin/tmux-session-switcher.sh
-ln -sf "$CURRENT_DIR/bin/show-tmux-popup.sh"  /usr/local/bin/show-tmux-popup.sh
+ln -sf "$CURRENT_DIR/bin/tmux/yazi-floating-selector.sh"  /usr/local/bin/tmux-yazi-floating-selector.sh
+ln -sf "$CURRENT_DIR/bin/tmux/session-switcher.sh"  /usr/local/bin/tmux-session-switcher.sh
+ln -sf "$CURRENT_DIR/bin/tmux/show-popup.sh"  /usr/local/bin/tmux-show-popup.sh

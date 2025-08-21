@@ -1,6 +1,12 @@
 folder="$1"
 session="$(basename "$folder")"
 
+# Check if the path is a directory
+if [ ! -d "$folder" ]; then
+    echo "Error: '$folder' is not a directory"
+    exit 0
+fi
+
 # 1. ensure session exists (detached, in the right CWD)
 if ! tmux has-session -t "$session" 2>/dev/null; then
   tmux new-session -d -s "$session" -c "$folder"

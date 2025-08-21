@@ -41,7 +41,7 @@ monitors=$(aerospace list-monitors | awk -F'|' '{print $1}' | tr -d ' ')
 
 # Create workspace indicators for both monitors
 for monitor in $monitors; do
-    position="left"
+  position="left"
   
   # Get workspaces for this monitor and create indicators
   for sid in $(aerospace list-workspaces --monitor $monitor); do
@@ -100,7 +100,7 @@ sketchybar --add item space_separator left \
 
 # Front app!!
 sketchybar --add item front_app left \
-  --set one associated_display=2 \
+  --set front_app associated_display=1 \
   --set front_app icon.drawing=off \
   script="$PLUGIN_DIR/front_app.sh" \
   --subscribe front_app front_app_switched

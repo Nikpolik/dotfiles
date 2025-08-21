@@ -11,16 +11,29 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell", "gopls", "typescript-language-server" }
+      ensure_installed = {
+        "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell",
+        "gopls", "typescript-language-server", "pyright", "black"
+      }
     }
   },
   {
     'stevearc/conform.nvim',
     opts = {
       format_on_save = {
-        -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_format = "fallback",
+      },
+      formatters = {
+        black = {
+          prepend_args = { '--fast' },
+        }
+      },
+      formatters_by_ft = {
+        javascript = { "prettierd" },
+        typescript = { "prettierd" },
+        typescriptreact = { "prettierd" },
+        python = { "black" },
       },
     },
   },
@@ -42,10 +55,13 @@ return {
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require("lspconfig")
 
-      lspconfig.lua_ls.setup { capabilities = capabilities }
-      lspconfig.rust_analyzer.setup { capabilities = capabilities }
-      lspconfig.gopls.setup { capabilities = capabilities }
-      lspconfig.ts_ls.setup { capabilities = capabilities }
+      local servers = { 'lua_ls', 'rust_analyzer', 'gopls', 'ts_ls', 'pyright' }
+
+      for _, server in ipairs(servers) do
+        lspconfig[server].setup {
+          capabilities = capabilities,
+        }
+      end
     end
   }
 }

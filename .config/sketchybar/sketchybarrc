@@ -37,23 +37,18 @@ sketchybar --default "${default[@]}"
 # Add the aerospace_workspace_change event we specified in aerospace.toml
 sketchybar --add event aerospace_workspace_change
 
+monitors=$(aerospace list-monitors | awk -F'|' '{print $1}' | tr -d ' ')
+
 # Create workspace indicators for both monitors
-for monitor in 1 2; do
-  # Define position based on monitor (left for monitor 1, right for monitor 2)
-  if [ "$monitor" -eq 1 ]; then
-    position="right"
-    display=2
-  else
+for monitor in $monitors; do
     position="left"
-    display=1
-  fi
   
   # Get workspaces for this monitor and create indicators
   for sid in $(aerospace list-workspaces --monitor $monitor); do
     sketchybar --add item space.${sid} $position \
       --subscribe space.${sid} aerospace_workspace_change \
       --set space.${sid} \
-      --set one associated_display=${display} \
+      --set space.${sid} associated_display=${monitor} \
       drawing=off \
       background.color=0x44ffffff \
       background.corner_radius=5 \
@@ -78,7 +73,7 @@ for monitor in 1 2; do
 done
 
 # Load Icons on startup for both monitors
-for monitor in 1 2; do
+for monitor in $monitors; do
   for sid in $(aerospace list-workspaces --monitor $monitor --empty no); do
     apps=$(aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
     sketchybar --set space.${sid} drawing=on

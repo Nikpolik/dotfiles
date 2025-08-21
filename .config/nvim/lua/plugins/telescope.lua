@@ -2,7 +2,7 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
+    branch = 'master',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       extensions = {
@@ -15,11 +15,12 @@ return {
       },
     },
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<cr>",                                 desc = "Find files" },
-      { "<leader>fb", "<cmd>Telescope buffers<cr>",                                    desc = "Find buffers" },
-      { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                                   desc = "Find recent files" },
-      { "<leader>st", "<cmd>Telescope live_grep<cr>",                                  desc = "Search text" },
-      { "<leader>e",  "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", desc = "Open file browser" },
+      { "<leader>ff", "<cmd>Telescope find_files<cr>",             desc = "Find files" },
+      { "<leader>fb", "<cmd>Telescope buffers<cr>",                desc = "Find buffers" },
+      { "<leader>fr", "<cmd>Telescope oldfiles cwd_only=true<cr>", desc = "Find recent files" },
+      { "<leader>st", "<cmd>Telescope live_grep<cr>",              desc = "Search text" },
+      { "gd",         "<cmd>Telescope lsp_definitions<cr>",        desc = "Go to definition" },
+      { "grr",        "<cmd>Telescope lsp_references<cr>",         desc = "Find references" }
     }
   },
   {

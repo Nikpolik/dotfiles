@@ -1,4 +1,4 @@
-ater-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = ['exec-and-forget sketchybar']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
@@ -33,6 +33,10 @@ run = 'move-node-to-workspace E'
 if.app-name-regex-substring = 'spotify'
 run = 'move-node-to-workspace M'
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'ghostty'
+run = 'move-node-to-workspace T'
+
 [key-mapping]
 preset = 'qwerty'
 
@@ -43,9 +47,6 @@ outer.left =       20
 outer.bottom =     10
 outer.top =        50
 outer.right =      20
-
-[exec.env-vars]
-PATH = '/usr/local/bin/:${PATH}'
 
 [mode.main.binding]
 alt-slash = 'layout tiles horizontal vertical'
@@ -76,6 +77,7 @@ alt-9 = 'workspace 9'
 alt-e = 'workspace E'
 alt-o = 'workspace O'
 alt-m = 'workspace M'
+alt-t = 'workspace T'
 
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
@@ -120,11 +122,11 @@ shift-down = ['volume set 0', 'mode main']
 3 = 'main'
 4 = 'main'
 5 = 'main'
+T = 'main'
 6 = ['secondary', 'main']
 7 = ['secondary', 'main']
 8 = ['secondary', 'main']
 9 = ['secondary', 'main']
 E = ['secondary', 'main']
-T = ['secondary', 'main']
 O = ['secondary', 'main']
 M = ['secondary', 'main']

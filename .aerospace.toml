@@ -30,7 +30,7 @@ if.app-name-regex-substring = 'todoist'
 run = 'move-node-to-workspace E' 
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'spotify'
+if.app-name-regex-substring = 'tidal'
 run = 'move-node-to-workspace M'
 
 [[on-window-detected]]

@@ -13,7 +13,8 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell",
-        "gopls", "typescript-language-server", "pyright", "black"
+        "gopls", "typescript-language-server", "pyright", "black",
+        "tailwindcss",
       }
     }
   },
@@ -55,7 +56,10 @@ return {
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require("lspconfig")
 
-      local servers = { 'lua_ls', 'rust_analyzer', 'gopls', 'ts_ls', 'pyright' }
+      local servers = {
+        'lua_ls', 'rust_analyzer', 'gopls', 'ts_ls', 'pyright',
+        'tailwindcss'
+      }
 
       for _, server in ipairs(servers) do
         lspconfig[server].setup {

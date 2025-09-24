@@ -28,7 +28,7 @@ selected=$(cat "$HIST_FILE" | \
         --reverse \
         --border \
         --prompt="Search history > " \
-        --preview-window=down:3:wrap \
+        --preview-window=down:1:wrap \
         --preview='echo {}' \
         --header='Enter: copy to clipboard | Ctrl-C: exit')
 

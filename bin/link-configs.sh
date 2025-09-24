@@ -10,7 +10,7 @@ ln -sf "$CURRENT_DIR/.tmux.conf" ~/.tmux.conf
 ln -sf "$CURRENT_DIR/.config/ghostty" ~/.config/
 ln -sf "$CURRENT_DIR/.config/nvim" ~/.config/
 ln -sf "$CURRENT_DIR/.config/sketchybar" ~/.config/
-ln -sf "$CURRENT_DIR/.config/yazi" ~/.config/
+ln -sf "$CURRENT_DIR/.config/yazi" ~/.config/yazi
 
 # TMUX helper scripts
 ln -sf "$CURRENT_DIR/bin/tmux/yazi-floating-selector.sh"  ~/bin/tmux-yazi-floating-selector.sh

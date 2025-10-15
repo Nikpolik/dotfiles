@@ -20,10 +20,16 @@ fi
 
 # Read history file, clean it up, and pipe to fzf
 # The sed command removes the zsh extended history format timestamps
+# Reverse first, then deduplicate to keep most recent occurrence of each command
 selected=$(cat "$HIST_FILE" | \
     sed 's/^: [0-9]*:[0-9]*;//' | \
-    awk 'NF > 0 && !seen[$0]++' | \
     tail -r | \
+    awk '{
+        # Trim leading and trailing whitespace
+        gsub(/^[[:space:]]+|[[:space:]]+$/, "");
+        # Skip empty lines and deduplicate
+        if (NF > 0 && !seen[$0]++) print
+    }' | \
     fzf --height=50% \
         --reverse \
         --border \

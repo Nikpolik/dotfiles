@@ -14,14 +14,12 @@ HIST_FILE=${HISTFILE:-~/.zsh_history}
 # Check if history file exists
 if [[ ! -f "$HIST_FILE" ]]; then
     echo "Error: History file not found at $HIST_FILE"
-    echo "Your HISTFILE is set to: $HISTFILE"
     exit 1
 fi
 
 # Read history file, clean it up, and pipe to fzf
-# The sed command removes the zsh extended history format timestamps
-# Reverse first, then deduplicate to keep most recent occurrence of each command
-selected=$(cat "$HIST_FILE" | \
+# Use strings to handle binary data, remove timestamps, reverse, and deduplicate
+selected=$(strings "$HIST_FILE" | \
     sed 's/^: [0-9]*:[0-9]*;//' | \
     tail -r | \
     awk '{

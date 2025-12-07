@@ -48,7 +48,7 @@ for monitor in $monitors; do
     sketchybar --add item space.${sid} $position \
       --subscribe space.${sid} aerospace_workspace_change \
       --set space.${sid} \
-      --set space.${sid} associated_display=${monitor} \
+      associated_display=${monitor} \
       drawing=off \
       background.color=0x44ffffff \
       background.corner_radius=5 \

@@ -21,3 +21,9 @@ ln -sf "$CURRENT_DIR/bin/tmux/open-in-tmux.sh"  ~/bin/tmux-open-in-tmux.sh
 ln -sf "$CURRENT_DIR/bin/tmux/search-history.sh" ~/bin/tmux-search-history.sh
 ln -sf "$CURRENT_DIR/bin/tmux/toggle-claude-pane.sh" ~/bin/toggle-claude-pane.sh
 ln -sf "$CURRENT_DIR/bin/tmux/lazygit-popup.sh" ~/bin/tmux-lazygit-popup.sh
+
+
+# Git config
+ln -sf "$CURRENT_DIR/git/.gitconfig" ~/.gitconfig
+ln -sf "$CURRENT_DIR/git/.gitconfig-work" ~/.gitconfig-work
+ln -sf "$CURRENT_DIR/git/.gitconfig-personal" ~/.gitconfig-personal

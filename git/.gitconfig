@@ -1,0 +1,9 @@
+[user]
+    name = Nikos Polikandriotis
+    email = n.a.polikandriotis@gmail.com
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/personal/"]
+    path = ~/.gitconfig-personal

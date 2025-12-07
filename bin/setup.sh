@@ -46,6 +46,8 @@ ya pack -a yazi-rs/plugins:smart-enter
 # tig is a better git log viewer
 brew install tig
 
+brew install lazygit
+
 brew install tree
 
 brew install luarocks

@@ -3,5 +3,7 @@ use = "yazi-rs/plugins:smart-enter"
 rev = "55bf699"
 hash = "7918aab6a71caf31b58411f789195677"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "sanjinso/monokai-vibrant"
+rev = "8b68223"
+hash = "f4458ebaf8961d714eba05fe5ba40166"

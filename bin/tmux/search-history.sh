@@ -28,8 +28,7 @@ selected=$(strings "$HIST_FILE" | \
         # Skip empty lines and deduplicate
         if (NF > 0 && !seen[$0]++) print
     }' | \
-    fzf --height=50% \
-        --reverse \
+    fzf --reverse \
         --border \
         --prompt="Search history > " \
         --preview-window=down:1:wrap \

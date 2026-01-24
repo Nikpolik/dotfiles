@@ -1,0 +1,50 @@
+[popup.terminal]
+width = 0.8
+height = 0.88
+position = "center"
+key_table = "popup"
+status = false
+prefix = "None"
+
+[popup.lazygit]
+command = "lazygit"
+width = 0.9
+height = 0.9
+position = "center"
+border = false
+
+[popup.branch]
+command = "tmux-branch-switcher.sh"
+width = 80
+height = 20
+position = "center"
+border = false
+
+[popup.history]
+command = "tmux-search-history.sh"
+width = 100
+height = 40
+position = "center"
+border = false
+
+[popup.yazi]
+command = "yazi ~/"
+width = 0.9
+height = 0.9
+position = "center"
+session = true
+border = false
+
+[popup.session-switcher]
+command = "tmux-session-switcher.sh"
+width = 95
+height = 20
+border = false
+session = true
+
+[popup.lazydocker]
+command = "lazydocker"
+width = 0.75
+height = 0.75
+position = "center"
+border = false

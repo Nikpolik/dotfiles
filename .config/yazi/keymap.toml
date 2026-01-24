@@ -1,6 +1,6 @@
 [[mgr.prepend_keymap]]
 on   = "<C-o>"
-run  = "shell 'tmux-open-in-tmux.sh \"$0\"'"
+run  = "shell --orphan 'tsm session \"$0\"; ya emit quit'"
 desc = "Open (or attach) tmux session for hovered folder"
 
 [[mgr.prepend_keymap]]

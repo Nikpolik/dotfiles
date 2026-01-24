@@ -5,6 +5,9 @@ return {
     branch = 'master',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
+      defaults = {
+        path_display = { "filename_first" },
+      },
       extensions = {
         file_browser = {
           -- disables netrw and use telescope-file-browser in its place

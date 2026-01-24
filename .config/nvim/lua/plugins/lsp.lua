@@ -14,7 +14,7 @@ return {
       ensure_installed = {
         "lua_ls", "rust_analyzer", "prettierd", "eslint_d", "misspell",
         "gopls", "typescript-language-server", "pyright", "black",
-        "tailwindcss",
+        "tailwindcss", "kotlin-language-server",
       }
     }
   },
@@ -54,7 +54,6 @@ return {
     },
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require("lspconfig")
 
       local servers = {
         'lua_ls', 'rust_analyzer', 'gopls', 'ts_ls', 'pyright',
@@ -62,10 +61,19 @@ return {
       }
 
       for _, server in ipairs(servers) do
-        lspconfig[server].setup {
+        vim.lsp.enable(server)
+        vim.lsp.config(server, {
           capabilities = capabilities,
-        }
+        })
       end
+
+      -- vim.lsp.enable('kotlin_language_server')
+      -- vim.lsp.config('kotlin_language_server', {
+      --   cmd = { 'kotlin-language-server' },
+      --   filetypes = { 'kotlin' },
+      --   root_markers = { 'settings.gradle', 'settings.gradle.kts', 'build.gradle', 'build.gradle.kts', 'pom.xml' },
+      --   capabilities = capabilities,
+      -- })
     end
   }
 }

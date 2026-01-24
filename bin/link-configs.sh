@@ -20,8 +20,6 @@ ln -sf "$CURRENT_DIR/bin/tmux/session-switcher.sh"  ~/bin/tmux-session-switcher.
 ln -sf "$CURRENT_DIR/bin/tmux/branch-switcher.sh"  ~/bin/tmux-branch-switcher.sh
 ln -sf "$CURRENT_DIR/bin/tmux/open-in-tmux.sh"  ~/bin/tmux-open-in-tmux.sh
 ln -sf "$CURRENT_DIR/bin/tmux/search-history.sh" ~/bin/tmux-search-history.sh
-ln -sf "$CURRENT_DIR/bin/tmux/toggle-claude-pane.sh" ~/bin/toggle-claude-pane.sh
-
 # tsm config
 mkdir -p ~/.config/tsm
 ln -sf "$CURRENT_DIR/.config/tsm/config.toml" ~/.config/tsm/config.toml
